@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character set and viewport settings -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bikes Form</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    {% load static %}
+    <!-- Custom CSS loaded from the static folder -->
+    <link rel="stylesheet" href="{% static 'css/bikes.css' %}" />
+  </head>
+  <body>
+    <!-- Navbar starts -->
+    <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <!-- Link to the bike list view -->
+          <li class="nav-item">
+            <a href="{% url 'bike_list_view' %}" class="nav-link">Bike List</a>
+          </li>
+          <!-- Current page link for the bike form -->
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">Bike Form</a>
+          </li>
+        </ul>
+    </header>
+    <!-- Navbar ends -->
+
+    <div class="container">
+        <!-- Display the action (Create or Edit) dynamically in the header -->
+        <h2 style="color:white">{{ action }} Bike</h2>
+        <!-- Form starts -->
+        <form method="post">
+          {% csrf_token %} <!-- CSRF token for security -->
+          <!-- Hidden input to store bike_id -->
+          <input type="hidden" name="bike_id" value="{{ bike_id }}" />
+          <!-- Form group for trademark input -->
+          <div class="form-group">
+            <label style="color:white" for="trademark">Trademark</label>
+            <!-- Input field for trademark -->
+            <input style="color:white; background-color:rgb(29, 29, 29); border: white, solid, 1px" type="text" class="form-control" id="trademark" name="trademark" value="{{ bike.trademark }}" required>
+          </div>
+          <!-- Form group for model input -->
+          <div class="form-group">
+            <label style="color:white" for="model">Model</label>
+            <!-- Input field for model -->
+            <input style="color:white; background-color:rgb(29, 29, 29); border: white, solid, 1px" type="text" class="form-control" id="model" name="model" value="{{ bike.model }}" required>
+          </div>
+          <!-- Form group for reference input -->
+          <div class="form-group">
+            <label style="color:white" for="reference">Reference</label>
+            <!-- Input field for reference -->
+            <input style="color:white; background-color:rgb(29, 29, 29); border: white, solid, 1px" type="text" class="form-control" id="reference" name="reference" value="{{ bike.reference }}" required>
+          </div>
+          <!-- Form group for price input -->
+          <div class="form-group">
+            <label style="color:white" for="price">Price</label>
+            <!-- Input field for price -->
+            <input style="color:white; background-color:rgb(29, 29, 29); border: white, solid, 1px" type="number" class="form-control" id="price" name="price" value="{{ bike.price }}" required>
+          </div>
+          <!-- Form group for image URL input -->
+          <div class="form-group">
+            <label style="color:white" for="image">Image URL</label>
+            <!-- Input field for image URL -->
+            <input style="color:white; background-color:rgb(29, 29, 29); border: white, solid, 1px" type="text" class="form-control" id="image" name="image" value="{{ bike.image }}" required>
+          </div>
+          <!-- Form group for supplier input -->
+          <div class="form-group">
+            <label style="color:white" for="supplier">Supplier</label>
+            <!-- Input field for supplier -->
+            <input style="color:white; background-color:rgb(29, 29, 29); border: white, solid, 1px" type="text" class="form-control" id="supplier" name="supplier" value="{{ bike.supplier }}" required>
+          </div>
+          <!-- Submit button for the form -->
+          <button type="submit" class="btn btn-primary">{{ action }} Bike</button>
+        </form>
+      </div>
+    
+  </body>
+</html>
