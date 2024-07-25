@@ -7,32 +7,59 @@ This is a Django application for managing a database of bikes, including functio
 The project is divided as follows:
 
 APP_MOTORCYCLES/
-├── app_motorcycles/ \n
+
+├── app_motorcycles/
+
 │ ├── pycache/
+
 │ ├── init.py
+
 │ ├── asgi.py
+
 │ ├── settings.py
+
 │ ├── urls.py
+
 │ ├── wsgi.py
+
 ├── bikes_api/
+
 │ ├── pycache/
+
 │ ├── migrations/
+
 │ ├── init.py
+
 │ ├── admin.py
+
 │ ├── apps.py
+
 │ ├── models.py
+
 │ ├── serializers.py
+
 │ ├── tests.py
+
 │ ├── urls.py
+
 │ ├── views.py
+
 │ ├── static/
+
 │ │ ├── css/
+
 │ │ ├── bikes.css
+
 │ ├── templates/
+
 │ ├── bikes_api/
+
 │ ├── bike_form.html
+
 │ ├── bike_list.html
+
 ├── db.sqlite3
+
 ├── manage.py
 
 
