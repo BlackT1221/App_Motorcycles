@@ -7,7 +7,7 @@ This is a Django application for managing a database of bikes, including functio
 The project is divided as follows:
 
 APP_MOTORCYCLES/
-├── app_motorcycles/
+├── app_motorcycles/ \n
 │ ├── pycache/
 │ ├── init.py
 │ ├── asgi.py
